@@ -4,13 +4,15 @@
 
 <hr />
 
-<table>
+<table class="table table-hover">
   <tbody>
     <% @greetings.each do |greeting| %>
       <tr>
-        <td>
+        <td class="active" width="30%">
           <%= greeting.name %> <br />
-          <%= greeting.created_at %>
+          <small class="text-muted">
+            <%= greeting.created_at %>
+          </small>
         </td>
         <td>
           <%= greeting.comment %>
