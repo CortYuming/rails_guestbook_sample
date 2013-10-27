@@ -12,3 +12,8 @@
  *= require twitter/bootstrap
  *= require_tree .
  */
+
+@import "twitter/bootstrap";
+.field_with_errors {
+  @extend .has-error;
+}
