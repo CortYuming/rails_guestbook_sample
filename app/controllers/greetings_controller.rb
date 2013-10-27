@@ -1,6 +1,6 @@
 class GreetingsController < ApplicationController
   def index
-    @greetings = Greeting.all.order("created_at DESC")
+    @greetings = Greeting.all.order("created_at DESC").page(params[:page]).per(5)
     @greeting = Greeting.new
   end
 
