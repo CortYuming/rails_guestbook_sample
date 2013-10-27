@@ -1,3 +1,4 @@
 GuestbookSample::Application.routes.draw do
-  get "greetings/index"
+  resources :greetings, only: [:index, :create]
+  root 'greetings#index'
 end
