@@ -1,6 +1,7 @@
 class GreetingsController < ApplicationController
+  before_action :set_greetings, only: [:index, :create]
+
   def index
-    @greetings = Greeting.all.order("created_at DESC").page(params[:page]).per(5)
     @greeting = Greeting.new
   end
 
@@ -17,6 +18,10 @@ class GreetingsController < ApplicationController
   end
 
   private
+  def set_greetings
+    @greetings = Greeting.all.order("created_at DESC").page(params[:page]).per(5)
+  end
+
   def greeting_params
     params.require(:greeting).permit(:name, :comment)
   end
